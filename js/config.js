@@ -22,36 +22,26 @@ const SITE_CONFIG = {
 
 // API站点配置
 const API_SITES = {
-    dyttzy: {
-        api: 'http://caiji.dyttzyapi.com',
-        name: '电影天堂资源',
-        detail: 'http://caiji.dyttzyapi.com',
-    },
-    ruyi: {
-        api: 'https://cj.rycjapi.com',
-        name: '如意资源',
-    },
-    bfzy: {
-        api: 'https://bfzyapi.com',
-        name: '暴风资源',
-    },
-    tyyszy: {
-        api: 'https://tyyszy.com',
-        name: '天涯资源',
-    },
-    xiaomaomi: {
-        api: 'https://zy.xiaomaomi.cc',
-        name: '小猫咪资源',
+    heimuer: {
+        api: 'https://json.heimuer.xyz',
+        name: '黑木耳',
+        detail: 'https://heimuer.tv',
+        filterAdRule: '#EXT-X-DISCONTINUITY\\n#EXTINF:\\d+\\.\\d+,\\n.*?\\n#EXT-X-DISCONTINUITY'
     },
     ffzy: {
         api: 'http://ffzy5.tv',
         name: '非凡影视',
         detail: 'http://ffzy5.tv',
+        filterAdRule: '#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY'
     },
-    heimuer: {
-        api: 'https://json.heimuer.xyz',
-        name: '黑木耳',
-        detail: 'https://heimuer.tv',
+    tyyszy: {
+        api: 'https://tyyszy.com',
+        name: '天涯资源',
+    },
+    ckzy: {
+        api: 'https://www.ckzy1.com',
+        name: 'CK资源',
+        adult: true
     },
     zy360: {
         api: 'https://360zy.com',
@@ -61,8 +51,12 @@ const API_SITES = {
         api: 'https://wolongzyw.com',
         name: '卧龙资源',
     },
-    hwba: {
+    cjhw: {
         api: 'https://cjhwba.com',
+        name: '新华为',
+    },
+    hwba: {
+        api: 'https://cjwba.com',
         name: '华为吧资源',
     },
     jisu: {
@@ -74,6 +68,10 @@ const API_SITES = {
         api: 'https://dbzy.com',
         name: '豆瓣资源',
     },
+    bfzy: {
+        api: 'https://bfzyapi.com',
+        name: '暴风资源',
+    },
     mozhua: {
         api: 'https://mozhuazy.com',
         name: '魔爪资源',
@@ -81,35 +79,6 @@ const API_SITES = {
     mdzy: {
         api: 'https://www.mdzyapi.com',
         name: '魔都资源',
-    },
-    zuid: {
-        api: 'https://api.zuidapi.com',
-        name: '最大资源'
-    },
-    yinghua: {
-        api: 'https://m3u8.apiyhzy.com',
-        name: '樱花资源'
-    },
-    baidu: {
-        api: 'https://api.apibdzy.com',
-        name: '百度云资源'
-    },
-    wujin: {
-        api: 'https://api.wujinapi.me',
-        name: '无尽资源'
-    },
-    wwzy: {
-        api: 'https://wwzy.tv',
-        name: '旺旺短剧'
-    },
-    ikun: {
-        api: 'https://ikunzyapi.com',
-        name: 'iKun资源'
-    },
-    testSource: {
-        api: 'https://www.example.com',
-        name: '空内容测试源',
-        adult: true
     },
     // 下面是一些成人内容的API源，默认隐藏，使用本项目浏览黄色内容违背项目初衷
     // 互联网上传播的色情内容将人彻底客体化、工具化，是性别解放和人类平等道路上的巨大障碍。
