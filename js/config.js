@@ -21,7 +21,7 @@ const SITE_CONFIG = {
 };
 
 // API站点配置
-const API_SITES = {
+const normal_apis = {
    dyttzy: {
         api: 'http://caiji.dyttzyapi.com/api.php/provide/vod',
         name: '电影天堂资源',
@@ -114,12 +114,79 @@ const API_SITES = {
         api: 'https://cj.lziapi.com/api.php/provide/vod/',
         name: '量子资源站'
     },
+    
 };
 // 定义合并方法
 function extendAPISites(newSites) {
     Object.assign(API_SITES, newSites);
 }
-
+const adutlt_apis = {// 下面是一些成人内容的API源，默认隐藏，使用本项目浏览黄色内容违背项目初衷
+    // 互联网上传播的色情内容将人彻底客体化、工具化，是性别解放和人类平等道路上的巨大障碍。
+    // 这些黄色影片是资本主义父权制压迫的最恶毒体现，它将暴力和屈辱商品化，践踏人的尊严，对受害者造成无法弥愈的伤害，并毒害社会关系。
+    // 资本为了利润，不惜将最卑劣的剥削（包括对受害者和表演者的剥削）和暴力商品化，
+    // 把性别剥削塑造成“性享受”麻痹观众的意识，转移我们对现实生活中矛盾和压迫的注意力。
+    // 这些影片和背后的产业已经使数百万男女“下海”，出卖自己的身体，甚至以此为生计。
+    // 而作为观众无辜吗？毫无疑问，他们促成了黄色产业链的再生产。
+    // 我们提供此警告，是希望您能认清这些内容的本质——它们是压迫和奴役的工具，而非娱乐。
+    // ckzy: {
+    //     api: 'https://www.ckzy1.com',
+    //     name: 'CK资源',
+    //     adult: true
+    // },
+    jkun: {
+        api: 'https://jkunzyapi.com/api.php/provide/vod',
+        name: 'jkun资源',
+        adult: true
+    },
+    bwzy: {
+        api: 'https://api.bwzym3u8.com/api.php/provide/vod',
+        name: '百万资源',
+        adult: true
+    },
+    souav: {
+        api: 'https://api.souavzy.vip/api.php/provide/vod',
+        name: 'souav资源',
+        adult: true
+    },
+    r155: {
+        api: 'https://155api.com/api.php/provide/vod',
+        name: '155资源',
+        adult: true
+    },
+    lsb: {
+        api: 'https://apilsbzy1.com/api.php/provide/vod',
+        name: 'lsb资源',
+        adult: true
+    },
+    huangcang: {
+        api: 'https://hsckzy.vip/api.php/provide/vod',
+        name: '黄色仓库',
+        adult: true,
+        detail: 'https://hsckzy.vip'
+    },
+    yutu: {
+        api: 'https://yutuzy10.com/api.php/provide/vod',
+        name: '玉兔资源',
+        adult: true
+    }
+} 
+//获取页面地址参数
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return null;
+}
+let API_SITES = normal_apis;
+//判断页面参数 
+if (getQueryVariable('anhao')=='woshiligong') {
+    API_SITES = {...normal_apis, ...adutlt_apis};
+} 
 // 暴露到全局
 window.API_SITES = API_SITES;
 window.extendAPISites = extendAPISites;
