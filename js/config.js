@@ -183,8 +183,12 @@ function getQueryVariable(variable) {
     return null;
 }
 let API_SITES = normal_apis;
+//获取sessionStorage anhao
+let sessionStorage = window.sessionStorage;
+let anhao = sessionStorage.getItem('anhao');
+
 //判断页面参数 
-if (getQueryVariable('anhao')=='woshiligong') {
+if (anhao=='ligong') {
     API_SITES = {...normal_apis, ...adutlt_apis};
 } 
 // 暴露到全局
